@@ -1,3 +1,5 @@
+### Lets face it we all like neofetch. Well from this day on this will be neofetch next. A project by me to keep nefetch support up. Please create an Issue with your ascii art for you distro on this project if it is missing.
+
 <h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
 <p align="center">A command-line system information tool written in bash 3.2+</p>
 
