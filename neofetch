@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+##!/usr/bin/env bash
 # vim: noai:ts=4:sw=4:expandtab
 # shellcheck source=/dev/null
 # shellcheck disable=2009
@@ -1562,6 +1562,7 @@ get_packages() {
             has swupd      && tot swupd bundle-list --quiet
             has pisi       && tot pisi li
             has pacstall   && tot pacstall -L
+	    has dyni       && tot dyni
 
             # Using the dnf package cache is much faster than rpm.
             if has dnf && type -p sqlite3 >/dev/null && [[ -f /var/cache/dnf/packages.db ]]; then
@@ -2551,18 +2552,18 @@ get_gpu() {
                     ;;
 		    *"Intel"*)
     # Handle Intel Arc and Core Ultra GPUs specifically
-    if [[ "$gpu" =~ Intel\ Arc || "$gpu" =~ Core\ Ultra || "$gpu" =~ Meteor\ Lake ]]; then
-        # If Intel Arc or Core Ultra or Meteor Lake is detected, retain the full description
-        gpu="${gpu/Intel/Intel Arc/Core Ultra}"
-    else
+    	if [[ "$gpu" =~ Intel\ Arc || "$gpu" =~ Core\ Ultra || "$gpu" =~ Meteor\ Lake ]]; then
+        	# If Intel Arc or Core Ultra or Meteor Lake is detected, retain the full description
+        	gpu="${gpu/integrated Intel Arc Graphics: Intel}"
+    	else
         # Process older Intel integrated graphics normally
-        gpu="${gpu/*Intel/Intel}"                           # Ensure it starts with Intel
-        gpu="${gpu/\(R\)}"                                  # Remove (R) for trademarks
-        gpu="${gpu/Corporation}"                             # Remove Corporation word
-        gpu="${gpu/ \(*}"                                    # Remove anything in parentheses
-        gpu="${gpu/Integrated Graphics Controller}"          # Remove generic Intel description
-        gpu="${gpu/*Xeon*/Intel HD Graphics}"               # For Xeon, replace with Intel HD Graphics
-    fi
+        	gpu="${gpu/*Intel/Intel}"                           # Ensure it starts with Intel
+        	gpu="${gpu/\(R\)}"                                  # Remove (R) for trademarks
+        	gpu="${gpu/Corporation}"                             # Remove Corporation word
+        	gpu="${gpu/ \(*}"                                    # Remove anything in parentheses
+        	gpu="${gpu/Integrated Graphics Controller}"          # Remove generic Intel description
+        	gpu="${gpu/*Xeon*/Intel HD Graphics}"               # For Xeon, replace with Intel HD Graphics
+	fi
 
     # If the GPU string is still empty, fallback to "Intel Integrated Graphics"
     [[ -z "$(trim "$gpu")" ]] && gpu="Intel Integrated Graphics"
