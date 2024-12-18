@@ -25,10 +25,13 @@ jobs:
     - name: Run distcheck
       run: make distcheck
 
+    - name: Install to local directory
+      run: |
+        make PREFIX=$(pwd)/install install
+
     - name: Upload build artifacts
-      if: success()  # Only upload if the job is successful
+      if: success()
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts  # Name of the artifact
-        path: ./linux-x86-generic-build-build-against-libc6-old  # Path to the files or directories you want to upload
-
+        name: build-artifacts
+        path: ./install/bin
