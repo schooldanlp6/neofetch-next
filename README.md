@@ -23,5 +23,12 @@ You can further configure Neofetch to display exactly what you want it to. Throu
 
 Neofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
 
+### Changelog
+#### 7.2.1
+Finally added support for Intel Arc Graphics on iGPUs (intel core ultra series)
+#### 7.2.0
+Migrated the fork
+#### 7.1.0
+final release from the original maintainer
 
 ### More: \[[Dependencies](https://github.com/dylanaraps/neofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neofetch/wiki)\]
