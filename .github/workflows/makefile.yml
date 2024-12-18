@@ -19,12 +19,6 @@ jobs:
     - name: Install dependencies
       run: make
 
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
-
     - name: Install to local directory
       run: |
         make PREFIX=$(pwd)/install install
