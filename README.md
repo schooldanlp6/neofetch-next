@@ -25,7 +25,7 @@ Neofetch supports almost 150 different operating systems. From Linux to Windows,
 
 ### Changelog
 #### 7.2.1
-Finally added support for Intel Arc Graphics on iGPUs (intel core ultra series)
+Finally added support for Intel Arc Graphics on iGPUs (intel core ultra series) and added dyni
 #### 7.2.0
 Migrated the fork
 #### 7.1.0
