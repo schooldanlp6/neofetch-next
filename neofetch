@@ -2549,23 +2549,24 @@ get_gpu() {
                         gpu="${gpu/\]*}"
                         gpu="NVIDIA $gpu"
                     ;;
+		    *"Intel"*)
+    # Handle Intel Arc and Core Ultra GPUs specifically
+    if [[ "$gpu" =~ Intel\ Arc || "$gpu" =~ Core\ Ultra || "$gpu" =~ Meteor\ Lake ]]; then
+        # If Intel Arc or Core Ultra or Meteor Lake is detected, retain the full description
+        gpu="${gpu/Intel/Intel Arc/Core Ultra}"
+    else
+        # Process older Intel integrated graphics normally
+        gpu="${gpu/*Intel/Intel}"                           # Ensure it starts with Intel
+        gpu="${gpu/\(R\)}"                                  # Remove (R) for trademarks
+        gpu="${gpu/Corporation}"                             # Remove Corporation word
+        gpu="${gpu/ \(*}"                                    # Remove anything in parentheses
+        gpu="${gpu/Integrated Graphics Controller}"          # Remove generic Intel description
+        gpu="${gpu/*Xeon*/Intel HD Graphics}"               # For Xeon, replace with Intel HD Graphics
+    fi
 
-			*"Intel"*)
-			    # Handle Intel Arc GPUs separately to preserve model details
-			    if [[ "$gpu" =~ Intel\ Arc ]]; then
-			        gpu="${gpu/Intel Arc/Intel Arc GPU}"
-			    fi
-
-			    gpu="${gpu/*Intel/Intel}"
-			    gpu="${gpu/\(R\)}"
-			    gpu="${gpu/Corporation}"
-			    gpu="${gpu/ \(*}"
-			    gpu="${gpu/Integrated Graphics Controller}"
-			    gpu="${gpu/*Xeon*/Intel HD Graphics}"
-
-			    # Ensure the GPU is not empty
- 			   [[ -z "$(trim "$gpu")" ]] && gpu="Intel Integrated Graphics"
-			;;
+    # If the GPU string is still empty, fallback to "Intel Integrated Graphics"
+    [[ -z "$(trim "$gpu")" ]] && gpu="Intel Integrated Graphics"
+;;
 
 
                     *"MCST"*)
