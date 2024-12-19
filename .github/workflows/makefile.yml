@@ -14,14 +14,15 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install make
-      run: sudo apt install make
-      
-    - name: Install dependencies
+      run: sudo apt install -y make
+
+    - name: Install dependencies (build)
       run: make
 
     - name: Install to local directory
       run: |
-        make PREFIX=$(pwd)/install install
+        # Run 'make install' with a custom DESTDIR to install to a local directory
+        make DESTDIR=$(pwd)/install install
 
     - name: Upload build artifacts
       if: success()
@@ -29,3 +30,4 @@ jobs:
       with:
         name: build-artifacts
         path: ./install/bin
+
