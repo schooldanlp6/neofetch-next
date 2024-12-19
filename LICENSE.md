@@ -4,6 +4,10 @@ Copyright (c) 2015-2021 Dylan Araps
 
 Copyright (c) 2024-2025 DanLP6 (Daniel)
 
+Permission is hereby granted for personal or non profit use, free of charge, to any person obtaining a copy of this software and associated documentation files in this case (the "Software").
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
