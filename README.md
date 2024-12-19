@@ -24,6 +24,8 @@ You can further configure Neofetch to display exactly what you want it to. Throu
 Neofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
 
 ### Changelog
+#### 7.2.2
+No changes for the Script this version is actually specific to the rust version
 #### 7.2.1
 Finally added support for Intel Arc Graphics on iGPUs (intel core ultra series) and added dyni
 #### 7.2.0
