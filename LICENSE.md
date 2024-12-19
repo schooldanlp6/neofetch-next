@@ -2,7 +2,7 @@ The MIT License (MIT)
 
 Copyright (c) 2015-2021 Dylan Araps
 
-Copyright (c) 2024-2025 DanLP6 (Daniel)
+Copyright (c) 2024-2025 DanLP6 - Daniel
 
 Permission is hereby granted for personal or non profit use, free of charge, to any person obtaining a copy of this software and associated documentation files in this case (the "Software").
 
