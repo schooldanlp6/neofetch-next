@@ -27,6 +27,8 @@ Neofetch supports almost 150 different operating systems. From Linux to Windows,
 #### 7.2.3
 added the temux pacman and fixed typos
 #### 7.2.2
+with the .2 release the neofetch reborn rewrite in rust is added
+
 neofetch legacy: not much happend aside from adding asahi
 #### 7.2.1
 Finally added support for Intel Arc Graphics on iGPUs (intel core ultra series) and added dyni
