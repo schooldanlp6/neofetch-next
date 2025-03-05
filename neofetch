@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-# vim: noai:ts=4:sw=4:expandtab
-# shellcheck source=/dev/null
-# shellcheck disable=2009
+#!/bin/bash
 #
 # Neofetch: A command-line system information tool written in bash 3.2+.
 # https://github.com/dylanaraps/neofetch
@@ -25,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-version=7.2.3
+version=7.2.4
 
 # Fallback to a value of '5' for shells which support bash
 # but do not set the 'BASH_' shell variables (osh).
@@ -252,8 +249,8 @@ speed_shorthand="off"
 # Flag:    --cpu_brand
 #
 # Example:
-# on:   'Intel i7-6500U'
-# off:  'i7-6500U (4)'
+# on:   'Intel i7-3427U'
+# off:  'i7-3427U (4)'
 cpu_brand="on"
 
 # CPU Speed
@@ -1152,7 +1149,10 @@ get_distro() {
                 10.16*) codename="macOS Big Sur" ;;
                 11.*)  codename="macOS Big Sur" ;;
                 12.*)  codename="macOS Monterey" ;;
-                *)      codename=macOS ;;
+                13.*)  codename="macOS Ventura" ;;
+                14.*)  codename="macOS Sonoma" ;;
+                15.*)  codename="macOS Sequoia" ;;
+                *)      codename="macOS $osx_version" ;;
             esac
 
             distro="$codename $osx_version $osx_build"
@@ -1288,6 +1288,7 @@ get_model() {
                 iPad4,[7-9]):        "iPad mini 3" ;;
                 iPad5,[1-2]):        "iPad mini 4" ;;
                 iPad11,[1-2]):       "iPad mini 5" ;;
+                iPad16,[1-2]):       "iPad mini 6" ;;
 
                 iPhone1,1):     "iPhone" ;;
                 iPhone1,2):     "iPhone 3G" ;;
@@ -1318,7 +1319,24 @@ get_model() {
                 iPhone13,2):    "iPhone 12" ;;
                 iPhone13,3):    "iPhone 12 Pro" ;;
                 iPhone13,4):    "iPhone 12 Pro Max" ;;
-
+                iPhone14,1):    "iPhone 13 Mini" ;;
+		iPhone14,2):    "iPhone 13" ;;
+                iPhone14,3):    "iPhone 13 Pro" ;;
+                iPhone14,4):    "iPhone 13 Pro Max" ;;
+                iPhone15,1):    "iPhone 14 Mini" ;;
+		iPhone15,2):    "iPhone 14" ;;
+                iPhone15,3):    "iPhone 14 Pro" ;;
+                iPhone15,4):    "iPhone 14 Pro Max" ;;
+                iPhone16,1):    "iPhone 15 Mini" ;;
+		iPhone16,2):    "iPhone 15" ;;
+                iPhone16,3):    "iPhone 15 Pro" ;;
+                iPhone16,4):    "iPhone 15 Pro Max" ;;
+                iPhone17,1):    "iPhone 16 Mini" ;;
+		iPhone17,2):    "iPhone 16" ;;
+                iPhone17,3):    "iPhone 16 Pro" ;;
+                iPhone17,4):    "iPhone 16 Pro Max" ;;
+                iPhone17,5):    "iPhone 16 e"
+                
                 iPod1,1): "iPod touch" ;;
                 ipod2,1): "iPod touch 2G" ;;
                 ipod3,1): "iPod touch 3G" ;;
@@ -5168,7 +5186,7 @@ ASCII:
                                 OS Elbrus, PacBSD, Parabola, Pardus, Parrot, Parsix, TrueOS,
                                 PCLinuxOS, Pengwin, Peppermint, Pisi, popos, Porteus, PostMarketOS,
                                 Proxmox, PuffOS, Puppy, PureOS, Qubes, Qubyt, Quibian, Radix, Raspbian, Reborn_OS,
-                                Redstar, Redcore, Redhat, Refracted_Devuan, Regata, Regolith, Rosa,
+                                Redstar, Redcore, Redhat, Refracted_Devuan, Regata, Regolith, Riinux, Rosa,
                                 sabotage, Sabayon, Sailfish, SalentOS, Scientific, Septor,
                                 SereneLinux, SharkLinux, Siduction, Slackware, SliTaz, SmartOS,
                                 Solus, Source_Mage, Sparky, Star, SteamOS, SunOS, openSUSE_Leap,
@@ -7799,7 +7817,18 @@ ${c1}    _-`````-,           ,- '- .
                   `;
 EOF
 	;;
-	
+        "Riinux"*)
+           set_colors
+           read -rd '' ascii_data <<'EOF'
+${c1}
+Riinux
+-> Real + Linux
+This is a distro by DanLP6
+To show what LFS can do
+
+EOF
+        ;;
+
         "Asahi"*)
             set_colors 3 2 1 8 7 6 4
             read -rd '' ascii_data <<'EOF'
