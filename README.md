@@ -1,3 +1,8 @@
+# Migrating neofetch to a New Repo (to not get PR notifications) which makes this for officially independet
+https://github.com/schooldanlp6/neofetch
+
+this repo is readonly from now on (all releases will be ported to the new repo)
+
 ### Lets face it we all like neofetch. Well from this day on this will be neofetch next. A project by me to keep nefetch support up. Please create an Issue with your ascii art for you distro on this project if it is missing.
 
 <h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
